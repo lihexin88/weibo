@@ -12,6 +12,7 @@ class SessionsController extends Controller {
     }
 
     /**
+     * 登录
      * @param Request $request
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -30,5 +31,15 @@ class SessionsController extends Controller {
         }
 
         return;
+    }
+
+    /**
+     * 退出登录
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function destroy() {
+        Auth::logout();
+        session()->flash('success', '您已成功退出！');
+        return redirect('login');
     }
 }
