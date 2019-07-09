@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66ce209-b526-4c98-bbe0-c52a0038dee7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sessions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sessions/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+            <state relative-caret-position="67">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -95,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/sessions/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="826">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -187,11 +187,11 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/sessions/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/resources/views/sessions/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SessionsController.php" />
       </list>
     </option>
@@ -471,7 +471,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22581000" />
+    <option name="totallyTimeSpent" value="22755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -744,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sessions/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://600576e8-def9-4822-b3bc-7ed302623250/schema/weibo/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="9ea4e9b3-b35e-4273-9820-7e26a3fae6c2">
@@ -812,10 +805,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sessions/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+        <state relative-caret-position="67">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>

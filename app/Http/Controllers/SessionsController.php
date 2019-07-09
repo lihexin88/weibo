@@ -11,9 +11,11 @@ class SessionsController extends Controller {
         return view('sessions.create');
     }
 
+
     /**
-     * 登录
+     * 用户登录
      * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request) {
@@ -22,15 +24,13 @@ class SessionsController extends Controller {
             'password' => 'required'
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $request->has('remember'))) {
             session()->flash('success', '欢迎回来！');
             return redirect()->route('users.show', [Auth::user()]);
         } else {
             session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
             return redirect()->back()->withInput();
         }
-
-        return;
     }
 
     /**
