@@ -8,6 +8,21 @@ use Illuminate\Http\Request;
 use Auth;
 
 class UsersController extends Controller {
+
+    /**
+     * UsersController constructor.
+     */
+    public function __construct() {
+//        middleware 中间件，此处用来指定忽略验证的方法
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store']
+        ]);
+//        注册页面只有未登录用户进行访问
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+
     //
     public function create() {
         return view('users.create');
@@ -41,21 +56,13 @@ class UsersController extends Controller {
     }
 
 
-    /**
-     * @param User $user
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
     public function edit(User $user) {
+        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
-    /**
-     * @param User $user
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Validation\ValidationException
-     */
     public function update(User $user, Request $request) {
+        $this->authorize('update', $user);
         $this->validate($request, [
             'name' => 'required|max:50',
             'password' => 'nullable|confirmed|min:6'
@@ -70,6 +77,6 @@ class UsersController extends Controller {
 
         session()->flash('success', '个人资料更新成功！');
 
-        return redirect()->route('users.show', $user);
+        return redirect()->route('users.show', $user->id);
     }
 }
