@@ -57,4 +57,13 @@ class User extends Authenticatable {
     }
 
 
+    /**
+     * 在用户模型中，指明一个用户拥有多条微博。
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function statuses() {
+        return $this->hasMany(Status::class);
+    }
+
+
 }
