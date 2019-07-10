@@ -15,17 +15,19 @@ class UsersController extends Controller {
     public function __construct() {
 //        middleware 中间件，此处用来指定忽略验证的方法
         $this->middleware('auth', [
-            'except' => ['show', 'create', 'store','index']
+            'except' => ['show', 'create', 'store', 'index']
         ]);
+
+
 //        注册页面只有未登录用户进行访问
         $this->middleware('guest', [
             'only' => ['create']
         ]);
     }
 
-    public function index(){
+    public function index() {
         $users = User::paginate(10);
-        return view('users.index',compact('users'));
+        return view('users.index', compact('users'));
     }
 
     //
@@ -84,4 +86,16 @@ class UsersController extends Controller {
 
         return redirect()->route('users.show', $user->id);
     }
+
+
+    /**
+     * @return string
+     */
+    public function destroy(User $user) {
+        $this->authorize('destroy',$user);
+        $user->delete();
+        session()->flash('success','成功删除用户');
+        return back();
+    }
+
 }
