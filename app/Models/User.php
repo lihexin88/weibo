@@ -6,6 +6,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
+use Auth;
+
 use Illuminate\Support\Str;
 
 class User extends Authenticatable {
@@ -67,10 +70,14 @@ class User extends Authenticatable {
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * 显示用户微博动态
+     * @return mixed
      */
     public function feed() {
-        return $this->statuses()
+        $user_ids = $this->followings->pluck('id')->toArray();
+        array_push($user_ids, $this->id);
+        return Status::whereIn('user_id', $user_ids)
+            ->with('user')
             ->orderBy('created_at', 'desc');
     }
 
