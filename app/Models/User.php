@@ -69,7 +69,7 @@ class User extends Authenticatable {
     }
 
 
-    /**
+    /**sss
      * 显示用户微博动态
      * @return mixed
      */
